@@ -1,0 +1,13 @@
+<view class="wrap-container">
+    <view class="header">
+        <v-epsoide index="{{ classicData.index }}"></v-epsoide>
+
+        <view class="like-container">
+            <v-like bind:onLike="onLike" likeStatus="{{likeStatus}}" likeCount="{{likeCount}}"></v-like>
+        </view>
+    </view>
+    
+    <view class="content">
+        <v-movie></v-movie>
+    </view>
+</view>

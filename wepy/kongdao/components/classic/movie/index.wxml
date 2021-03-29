@@ -1,0 +1,7 @@
+<view class="movie-container">
+    <image class="cover" src=""></image>
+    <image class="tag" src="images/movie_tag.png"></image>
+    <text class="description">
+        生活就像做菜
+    </text>
+</view>
