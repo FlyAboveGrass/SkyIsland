@@ -8,6 +8,8 @@
     </view>
     
     <view class="content">
-        <v-movie></v-movie>
+        <v-movie image="{{ classicData.image }}" content="{{ classicData.content }}"></v-movie>
     </view>
+    
+    <v-navi bind:left="onLeft" bind:right="onRight" title="{{classicData.title}}" first="{{first}}" latest="{{latest}}" class="navi" />
 </view>

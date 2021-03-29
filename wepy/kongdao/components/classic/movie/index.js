@@ -1,10 +1,12 @@
+import classic_behavior from "../classic-bh";
+
 // components/classic/movie/index.js
 Component({
+  behaviors: [classic_behavior],
   /**
    * 组件的属性列表
    */
   properties: {
-
   },
 
   /**
@@ -19,5 +21,11 @@ Component({
    */
   methods: {
 
+  },
+
+  lifetimes: {
+    attached: function() {
+      console.log(this.data, this.properties);
+    }
   }
 })

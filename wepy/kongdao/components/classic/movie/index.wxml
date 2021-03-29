@@ -1,7 +1,9 @@
 <view class="movie-container">
-    <image class="cover" src=""></image>
-    <image class="tag" src="images/movie_tag.png"></image>
+    <view class="image" hover-class="none" hover-stop-propagation="false">
+        <image class="cover" src="{{ image }}"></image>
+        <image class="tag" src="images/movie_tag.png"></image>
+    </view>
     <text class="description">
-        生活就像做菜
+        {{ content }}
     </text>
 </view>

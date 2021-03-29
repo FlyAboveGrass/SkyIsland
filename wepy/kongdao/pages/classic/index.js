@@ -21,6 +21,7 @@ Page({
    */
   onLoad: function (options) {
     classicModel.getLast((res) => {
+      console.log('classic onload res', res);
       this.setData({
         likeStatus: res.like_status,
         likeCount: res.fav_nums,

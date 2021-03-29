@@ -1,0 +1,29 @@
+.movie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 24rpx;
+}
+.image {
+    position: relative;
+    margin: 70rpx;
+}
+
+.tag {
+    width: 46rpx;
+    height: 142rpx;
+    position: absolute;
+    left: 23rpx;
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.description {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85%;
+    -webkit-line-clamp: 2;
+    text-align: center;
+}

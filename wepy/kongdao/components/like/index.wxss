@@ -6,12 +6,12 @@
     margin-right: 24rpx;
 }
 
-.like-container  image {
+.like-container  .image {
     width: 32rpx;
     height: 28rpx;
 }
 
-.like-container  text {
+.like-container  .text {
     position: absolute;
     top: -24rpx;
     right: -24rpx;
