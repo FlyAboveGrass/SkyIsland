@@ -21,11 +21,46 @@ Page({
    */
   onLoad: function (options) {
     classicModel.getLast((res) => {
-      console.log('classic onload res', res);
       this.setData({
         likeStatus: res.like_status,
         likeCount: res.fav_nums,
-        classicData: res
+        classicData: res,
+        first: res.index === 1,
+        latest: res.index === classicModel._getLastIndex()
+      })
+    })
+  },
+
+  onLike: function(event) {
+    likeModel.likePost(event.detail.triggerLike, this.data.classicData && this.data.classicData.id, this.data.classicData && this.data.classicData.type)
+  },
+
+  onPrev: function(event) {
+    if(this.data.first) {
+      return ;
+    }
+    classicModel.getPrevious(this.data.classicData.index, (res) => {
+      this.setData({
+        likeStatus: res.like_status,
+        likeCount: res.fav_nums,
+        classicData: res,
+        first: res.index === 1,
+        latest: res.index === classicModel._getLastIndex()
+      })
+    })
+  },
+
+  onNext: function(event) {
+    if(this.data.latest) {
+      return ;
+    }
+    classicModel.getNext(this.data.classicData.index, (res) => {
+      this.setData({
+        likeStatus: res.like_status,
+        likeCount: res.fav_nums,
+        classicData: res,
+        first: res.index === 1,
+        latest: res.index === classicModel._getLastIndex()
       })
     })
   },
@@ -77,10 +112,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  onLike: function(event) {
-    let behavior = event.detail.triggerLike;
-    likeModel.likePost(behavior, this.data.classicData && this.data.classicData.id, this.data.classicData && this.data.classicData.type)
   }
 })

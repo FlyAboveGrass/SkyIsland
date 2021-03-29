@@ -4,20 +4,34 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    title: String,
+    first: Boolean,
+    last: Boolean
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    leftSrc: './images/triangle@left.png',
+    leftDisableSrc: './images/triangle.dis@left.png',
+    rightSrc: './images/triangle@right.png',
+    rightDisableSrc: './images/triangle.dis@right.png'
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    onPrev: function(event) {
+      if(!this.properties.first) {
+        this.triggerEvent('onPrev')
+      }
+    },
+    onNext: function(evet) {
+      if(!this.properties.last) {
+        this.triggerEvent('onNext')
+      }
+    }
   }
 })
