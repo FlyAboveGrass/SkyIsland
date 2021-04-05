@@ -1,2 +1,15 @@
-<!--components/classic/music/index.wxml-->
-<text>components/classic/music/index.wxml</text>
+<view class="music-container" hidden="{{ hidden }}">
+    <view class="image" hover-class="none" hover-stop-propagation="false">
+        <image class="cover" src="{{ image }}"></image>
+        <image 
+            class="play" 
+            src="{{ playing ? playSrc : pauseSrc }}" 
+            title="{{ title }}"
+            bind:tap="play"
+        ></image>
+        <image class="tag" src="images/music@tag.png"></image>
+    </view>
+    <text class="description">
+        {{ content }}
+    </text>
+</view>

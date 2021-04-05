@@ -1,1 +1,11 @@
-/* components/classic/music/index.wxss */
+@import "../classic-common.wxss"
+
+.play {
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

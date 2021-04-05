@@ -1,4 +1,4 @@
-<view class="movie-container">
+<view class="movie-container" hidden="{{ hidden }}">
     <view class="image" hover-class="none" hover-stop-propagation="false">
         <image class="cover" src="{{ image }}"></image>
         <image class="tag" src="images/movie_tag.png"></image>

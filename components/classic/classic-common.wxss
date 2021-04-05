@@ -1,4 +1,4 @@
-.movie-container {
+.movie-container,.music-container,.essay-container{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

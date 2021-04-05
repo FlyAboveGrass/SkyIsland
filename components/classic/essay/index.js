@@ -1,5 +1,7 @@
+import classic_behavior from "../classic-bh";
 // components/classic/essay/index.js
 Component({
+  behaviors: [classic_behavior],
   /**
    * 组件的属性列表
    */
