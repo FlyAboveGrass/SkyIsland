@@ -1,0 +1,35 @@
+/* components/epsoide/index.wxss */
+
+.epsoide {
+    display: inline-flex;
+    line-height: 30px;
+    align-items: center;
+}
+
+.index {
+    font-size: 30px;
+    font-weight: 800px;
+}
+
+.line {
+    border-right: 2rpx solid black;
+    padding-right: 10rpx;
+    margin-right: 10rpx;
+}
+
+.date {
+    display: inline-flex;
+    flex-direction: column;
+    height: 22px;
+}
+
+.month{
+    font-size:12px;
+    line-height:12px; 
+    padding-bottom: 2px; 
+  }
+  
+  .year{
+    font-size:10px;
+    line-height:10px; 
+  }

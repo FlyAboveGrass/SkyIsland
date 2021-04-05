@@ -1,0 +1,9 @@
+<view class="movie-container">
+    <view class="image" hover-class="none" hover-stop-propagation="false">
+        <image class="cover" src="{{ image }}"></image>
+        <image class="tag" src="images/movie_tag.png"></image>
+    </view>
+    <text class="description">
+        {{ content }}
+    </text>
+</view>

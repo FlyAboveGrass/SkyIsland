@@ -1,0 +1,18 @@
+.navi-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 12rpx auto;
+}
+
+.title {
+    width: 80%;
+    text-align: center;
+}
+
+.icon {
+    width: 80rpx;
+    height: 80rpx;
+    flex-basis: 1;
+}

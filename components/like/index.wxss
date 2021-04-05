@@ -1,0 +1,22 @@
+/* components/like/index.wxss */
+.like-container {
+    position: relative;
+    display: inline-flex;
+    padding: 12rpx;
+    margin-right: 24rpx;
+}
+
+.like-container  .image {
+    width: 32rpx;
+    height: 28rpx;
+}
+
+.like-container  .text {
+    position: absolute;
+    top: -24rpx;
+    right: -24rpx;
+    font-family: "PingFangSC-Thin";
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #bbbbbb;
+}
