@@ -22,11 +22,9 @@ Page({
     })
 
     BookModel.getComments(bid).then((data) => {
-      console.log(data);
       this.setData({
         comments: data.comments
       })
-      console.log(this.data);
     })
   },
 

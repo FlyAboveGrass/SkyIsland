@@ -25,7 +25,6 @@ Component({
 
   lifetimes: {
     attached: function() {
-      console.log(this.data, this.properties);
     }
   }
 })

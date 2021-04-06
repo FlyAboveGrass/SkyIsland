@@ -14,7 +14,6 @@ Page({
    */
   onLoad: function (options) {
     BookModel.getHotBookList().then((res) => {
-      console.log(res);
       this.setData({
         bookList: res
       })

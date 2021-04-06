@@ -7,7 +7,7 @@
   </view>
   <view class="sub-container">
     <text class="headline">内容简介</text>
-    <text decode="{{true}}" class="content" decode='true'>{{book.summary}}</text>
+    <text decode="{{true}}" class="content" decode='true'>{{ utils.format(book.summary) }}</text>
   </view>
   <view class="sub-container">
     <text class="headline">图书信息</text>

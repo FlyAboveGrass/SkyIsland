@@ -1,7 +1,8 @@
 /* pages/classic/index.wxss */
 
 .header {
-    width: 100%;
+    width: 90%;
+    margin: 0px auto;
     display: flex;
     justify-content: space-between;
 }

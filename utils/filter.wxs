@@ -1,10 +1,11 @@
-var format=function(text){
+var format = function(text){
     // 把text中的\\n换成\n
     if(!text){
       return
     }
-    var reg=getRegExp('\\\\n','g')
-    return text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;')
+    var reg = getRegExp('\\\\n','g')
+    console.log('reg', reg, text.replace(reg,'&nbsp;&nbsp;&nbsp;&nbsp;'));
+    return text.replace(reg,'\n')
 }
 
 var limit = function(arr, len) {

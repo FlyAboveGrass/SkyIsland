@@ -31,7 +31,6 @@ Component({
           curType: this.data.type[this.properties.type]
         })
       }
-      console.log(this.data);
     }
   },
 
