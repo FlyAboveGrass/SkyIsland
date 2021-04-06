@@ -1,0 +1,36 @@
+<wxs src="/utils/filter.wxs" module="utils"></wxs>
+<view class="container">
+  <view class="head">
+    <image class="book-image" src="{{book.image}}"></image>
+    <text class='title'>{{book.title}}</text>
+    <text class='author'>{{book.author}}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">内容简介</text>
+    <text decode="{{true}}" class="content" decode='true'>{{book.summary}}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">图书信息</text>
+    <view class="detail-container">
+      <view class="vertical">
+        <text class="description">出版社</text>
+        <text class="description">出版年</text>
+        <text class="description">页数</text>
+        <text class="description">定价</text>
+        <text class="description">装帧</text>
+      </view>
+      <view class="vertical">
+        <text class="">{{book.publisher}}</text>
+        <text class="">{{book.pubdate}}</text>
+        <text class="">{{book.pages}}</text>
+        <text class="">{{book.price}}</text>
+        <text class="">{{book.binding}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="post-container" wx:if="{{!posting}}">
+    <view class="like-container">
+      <v-like bind:like="onLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" />
+    </view>
+  </view> -->
+</view>

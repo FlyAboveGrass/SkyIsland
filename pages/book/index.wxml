@@ -15,5 +15,7 @@
     title="{{ item.title }}"
     like-count="{{ item.fav_nums }}"
     img="{{ item.image }}"
+    bind:tap="toBookDetail"
+    data-id="{{ item.id }}"
   ></v-book>
 </view>

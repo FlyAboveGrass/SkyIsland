@@ -1,36 +1,22 @@
 import BookModel from '../../model/book'
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    bookList: []
+    book: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    BookModel.getHotBookList().then((res) => {
-      console.log(res);
+    const bid = options.bid;
+    BookModel.getDetail(bid).then((res) => {
       this.setData({
-        bookList: res
+        book: res
       })
-    })
-  },
-
-  toBookDetail(event){
-    console.log(event);
-    //从从组件内部中拿到被绑定的id号
-    const bid = event.target.dataset.id;
-    if(!bid) {
-      return ;
-    }
-    // 在组件内部直接写跳转会降低这个组件的通用性
-    wx.navigateTo({
-      url: '/pages/book-detail/index?bid=' + bid,
     })
   },
 
@@ -61,4 +47,25 @@ Page({
   onUnload: function () {
 
   },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

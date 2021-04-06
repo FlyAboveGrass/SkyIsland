@@ -1,0 +1,20 @@
+var format=function(text){
+    // 把text中的\\n换成\n
+    if(!text){
+      return
+    }
+    var reg=getRegExp('\\\\n','g')
+    return text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function(arr, len) {
+    if(!arr || arr.length < len) {
+        return arr
+    }
+    return arr.slice(0, len)
+}
+
+module.exports = {
+    limit: limit,
+    format: format
+}
