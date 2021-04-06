@@ -31,7 +31,14 @@
   <view class="sub-container">
     <text class="headline">书籍短评</text>
     <view class="comment-list" wx:if="{{ comments.length > 0 }}">
-      <v-tag wx:for="{{ comments }}" class="tag"  content="{{ item.content }}" type="{{ tagTypes[index / 5]}}"></v-tag>
+      <v-tag 
+        wx:for="{{ comments }}" 
+        class="tag"  
+        content="{{ item.content }}" 
+        type="{{ tagTypes[index / 5]}}"
+      >
+        <text slot="after" class="comment-nums">{{ '+' + item.nums }}</text>
+      </v-tag>
     </view>
     
   </view>

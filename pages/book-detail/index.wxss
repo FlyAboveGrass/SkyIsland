@@ -82,3 +82,8 @@
 .comment-list .tag {
     margin: 10rpx;
 }
+
+.comment-list .comment-nums {
+    display: inline-block;
+    padding-left: 6rpx;
+}
