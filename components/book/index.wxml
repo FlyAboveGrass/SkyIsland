@@ -1,0 +1,9 @@
+<view class="book-container" wx:if="{{ img }}">
+    <image class="book-image" src="{{ img }}"></image>
+    <view class="description">
+        <text class="book-title">{{ title }}</text>
+        <view class="like">
+            {{ author }}
+        </view>
+    </view>
+</view>

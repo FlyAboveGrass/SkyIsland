@@ -1,12 +1,41 @@
 {
   "pages": [
-    "pages/classic/index"
+    "pages/book/index",
+    "pages/classic/index",
+    "pages/my/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "文艺·空岛",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "black",
+    "backgroundColor": "#77777",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/book/index",
+        "text": "书架",
+        "iconPath": "/images/tab/book.png",
+        "selectedIconPath": "/images/tab/book@highlight.png"
+      },
+      {
+        "pagePath": "pages/classic/index",
+        "text": "推荐",
+        "iconPath": "/images/tab/classic.png",
+        "selectedIconPath": "/images/tab/classic@highlight.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "/images/tab/my.png",
+        "selectedIconPath": "/images/tab/my@highlight.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

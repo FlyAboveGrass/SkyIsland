@@ -1,0 +1,19 @@
+<!-- <v-book 
+  wx:if="{{ bookList.length > 0 }}" 
+  author="{{ bookList[0].author }}" 
+  title="{{ bookList[0].title }}"
+  like-count="{{ bookList[0].fav_nums }}"
+  img="{{ bookList[0].image }}"
+></v-book> -->
+
+<view class="book-list-container">
+  <v-book 
+    wx:for="{{ bookList }}"
+    wx:key="{{ item.id }}"
+    class="book-item"
+    author="{{ item.author }}" 
+    title="{{ item.title }}"
+    like-count="{{ item.fav_nums }}"
+    img="{{ item.image }}"
+  ></v-book>
+</view>

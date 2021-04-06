@@ -1,0 +1,38 @@
+.book-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width:240rpx;
+    height:360rpx;
+    box-shadow:2px 2px 3px #e3e3e3;
+}
+
+.book-container .book-image {
+    width: 85%;
+    height: 100%;
+}
+
+.book-container .description {
+    text-align: center;
+    font-size: 24rpx;
+    width: 100%;
+    padding: 12rpx 0rpx;
+}
+
+.book-container .description .book-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 56rpx;
+}
+
+.book-container .like {
+    margin-top: 8rpx;
+    font-size: 20rpx;
+    color: #999999;
+    width: 100%;
+    height: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

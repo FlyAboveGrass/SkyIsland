@@ -13,7 +13,9 @@ Component({
   },
 
   attached() {
-    
+    mMgr.onPlay(() => {
+      console.log('播放')
+    })
   },
 
   /**
@@ -29,20 +31,38 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    play: function(e) {
-      if(this.data.playing) {
+    // play: function(e) {
+    //   if(this.data.playing) {
+    //     this.setData({
+    //       playing: false
+    //     });
+    //     mMgr.pause()
+    //   } else {
+    //     this.setData({
+    //       playing: true
+    //     });
+    //     console.log('mMgr.src ',mMgr, mMgr.src,this.properties.src );
+    //     mMgr.src = this.properties.src;
+    //     mMgr.title = this.properties.title;
+    //     console.log(mMgr.src )
+    //   }
+    // },
+    play: function(event){
+      if(!this.data.playing){
+        console.log(this.properties.src)
+        // 播放开始时切换图片
+        this.setData({
+          playing: true
+        })
+        console.log('mMgr.src ',mMgr, mMgr.src,this.properties.src );
+        mMgr.src = this.properties.src
+        mMgr.title = this.properties.title;
+        console.log(mMgr.src )
+      }else{
         this.setData({
           playing: false
         });
-        mMgr.pause()
-      } else {
-        this.setData({
-          playing: true
-        });
-        console.log('mMgr.src ',mMgr, mMgr.src,this.properties.src );
-        mMgr.src = this.properties.src
-        mMgr.title = this.properties.title
-        console.log(mMgr.src )
+        mMgr.pause();
       }
     }
   }

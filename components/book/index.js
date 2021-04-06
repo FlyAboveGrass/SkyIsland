@@ -1,12 +1,13 @@
-import classic_behavior from "../classic-bh";
-
-// components/classic/movie/index.js
+// components/book/index.js
 Component({
-  behaviors: [classic_behavior],
   /**
    * 组件的属性列表
    */
   properties: {
+    "author": String,
+    "title": String,
+    "img": String,
+    "like-count": String
   },
 
   /**
@@ -20,12 +21,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  },
-
-  lifetimes: {
-    attached: function() {
-      
-    }
+    
   }
 })
