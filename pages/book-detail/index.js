@@ -6,6 +6,8 @@ Page({
    */
   data: {
     book: null,
+    comments: [],
+    tagTypes: ['default', 'info', 'warning', 'danger', 'success']
   },
 
   /**
@@ -17,6 +19,14 @@ Page({
       this.setData({
         book: res
       })
+    })
+
+    BookModel.getComments(bid).then((data) => {
+      console.log(data);
+      this.setData({
+        comments: data.comments
+      })
+      console.log(this.data);
     })
   },
 

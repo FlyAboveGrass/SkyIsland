@@ -22,7 +22,6 @@ Page({
   },
 
   toBookDetail(event){
-    console.log(event);
     //从从组件内部中拿到被绑定的id号
     const bid = event.target.dataset.id;
     if(!bid) {

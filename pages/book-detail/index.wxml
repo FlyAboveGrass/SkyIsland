@@ -28,6 +28,13 @@
       </view>
     </view>
   </view>
+  <view class="sub-container">
+    <text class="headline">书籍短评</text>
+    <view class="comment-list" wx:if="{{ comments.length > 0 }}">
+      <v-tag wx:for="{{ comments }}" class="tag"  content="{{ item.content }}" type="{{ tagTypes[index / 5]}}"></v-tag>
+    </view>
+    
+  </view>
   <!-- <view class="post-container" wx:if="{{!posting}}">
     <view class="like-container">
       <v-like bind:like="onLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" />
