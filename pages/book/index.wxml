@@ -9,7 +9,7 @@
 <view class="book-list-container">
   <v-book 
     wx:for="{{ bookList }}"
-    wx:key="{{ item.id }}"
+    wx:key="id"
     class="book-item"
     author="{{ item.author }}" 
     title="{{ item.title }}"

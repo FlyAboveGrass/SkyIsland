@@ -4,7 +4,7 @@ var format = function(text){
       return
     }
     var reg = getRegExp('\\\\n','g')
-    console.log('reg', reg, text.replace(reg,'&nbsp;&nbsp;&nbsp;&nbsp;'));
+    // console.log('reg', reg, text.replace(reg,'&nbsp;&nbsp;&nbsp;&nbsp;'));
     return text.replace(reg,'\n')
 }
 
