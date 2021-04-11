@@ -1,14 +1,19 @@
 <wxs src="/utils/filter.wxs" module="utils"></wxs>
 <view class="container">
+  <!-- 书籍信息 -->
   <view class="head">
     <image class="book-image" src="{{book.image}}"></image>
     <text class='title'>{{book.title}}</text>
     <text class='author'>{{book.author}}</text>
   </view>
+
+  <!-- 内容简介 -->
   <view class="sub-container">
     <text class="headline">内容简介</text>
     <text decode="{{true}}" class="content" decode='true'>{{ utils.format(book.summary) }}</text>
   </view>
+
+  <!-- 图书信息 -->
   <view class="sub-container">
     <text class="headline">图书信息</text>
     <view class="detail-container">
@@ -20,19 +25,22 @@
         <text class="description">装帧</text>
       </view>
       <view class="vertical">
-        <text class="">{{book.publisher}}</text>
-        <text class="">{{book.pubdate}}</text>
-        <text class="">{{book.pages}}</text>
-        <text class="">{{book.price}}</text>
-        <text class="">{{book.binding}}</text>
+        <text class="">{{ book.publisher }}</text>
+        <text class="">{{ book.pubdate }}</text>
+        <text class="">{{ book.pages }}</text>
+        <text class="">{{ book.price }}</text>
+        <text class="">{{ book.binding }}</text>
       </view>
     </view>
   </view>
+
+  <!-- 短评 -->
   <view class="sub-container">
     <text class="headline">书籍短评</text>
     <view class="comment-list" wx:if="{{ comments.length > 0 }}">
       <v-tag 
         wx:for="{{ comments }}" 
+        wx::key="{{ index }}"
         class="tag"  
         content="{{ item.content }}" 
         type="{{ tagTypes[index / 5]}}"
@@ -40,11 +48,40 @@
         <text slot="after" class="comment-nums">{{ '+' + item.nums }}</text>
       </v-tag>
     </view>
-    
   </view>
-  <!-- <view class="post-container" wx:if="{{!posting}}">
-    <view class="like-container">
-      <v-like bind:like="onLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" />
+
+  <!-- 评论 -->
+  <view class="post-container" wx:if="{{ !posting }}">
+    <view class="fake-post" bind:tap="triggerPost">
+      <text class="sort-comment">请输入短评</text>
     </view>
-  </view> -->
+    <view class="like-container">
+      <!-- <v-like bind:like="onLike" class="like" like="{{likeStatus}}" count="{{likeCount}}" /> -->
+    </view>
+  </view>
+
+  <view class="mask" wx:if="{{ posting }}" catch:tap="triggerPost">
+    <view class="post-popover" catch:tap="cancelBubble">
+      <view class="post-header">
+        <text class="post-btn" catch:tap="triggerPost">取消</text>
+        <text class="post-btn btn-primary" catch:tap="postComment">确定</text>
+      </view>
+      <view class="comment-list" wx:if="{{ comments.length > 0 }}">
+        <v-tag 
+          wx:for="{{ utils.limit(comments, 4) }}" 
+          wx:key="{{ index }}"
+          class="tag"  
+          content="{{ item.content }}" 
+          type="{{ tagTypes[index / 5]}}"
+        >
+          <text slot="after" class="comment-nums">{{ '+' + item.nums }}</text>
+        </v-tag>
+      </view>
+      <view class="post-content">
+        <view class="post">
+          <input model:value="{{ postContent }}" type="text" placeholder="请输入短评" focus="true" />
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

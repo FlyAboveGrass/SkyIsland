@@ -1,7 +1,7 @@
 .container {
     background-color: #f5f5f5;
     width: 100%;
-    padding-bottom: 24vh;
+    padding-bottom: 140rpx;
 }
 
 .head {
@@ -86,4 +86,62 @@
 .comment-list .comment-nums {
     display: inline-block;
     padding-left: 16rpx;
+}
+
+.fake-post, .post {
+    border: 1px solid lightgray;
+    border-radius: 30rpx;
+    height: 60rpx;
+    box-sizing: border-box;
+    padding: 0px 40rpx;
+    margin: 12rpx 24rpx;
+}
+
+.post-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 140rpx;
+    background-color: white;
+    box-shadow: 0 1px 2px grey;
+}
+
+.post-container .fake-post .sort-comment {
+    line-height: 60rpx;
+    color: #bbb;
+}
+
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(225, 225, 225, 0.6);
+}
+
+.post-popover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+}
+
+.post-header {
+    overflow: hidden;
+}
+.post-btn {
+    padding: 6rpx 10rpx;
+    margin: 6rpx;
+    float: right;
+    font-size: 24rpx;
+}
+
+.btn-primary {
+     color: blueviolet;
+}
+
+.post-content {
+    
 }

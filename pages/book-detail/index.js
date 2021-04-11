@@ -1,4 +1,5 @@
-import BookModel from '../../model/book'
+import BookModel from '../../model/book';
+
 Page({
 
   /**
@@ -7,7 +8,9 @@ Page({
   data: {
     book: null,
     comments: [],
-    tagTypes: ['default', 'info', 'warning', 'danger', 'success']
+    tagTypes: ['default', 'info', 'warning', 'danger', 'success'],
+    posting: false,
+    postContent: ''
   },
 
   /**
@@ -24,6 +27,53 @@ Page({
     BookModel.getComments(bid).then((data) => {
       this.setData({
         comments: data.comments
+      })
+    })
+  },
+
+  triggerPost() {
+    this.setData({
+      posting: !this.data.posting
+    })
+  },
+
+  cancelBubble() {
+    return false
+  },
+
+  postComment() {
+    const comment = this.data.postContent
+    if(!comment) {
+      return
+    }
+    if(comment.length > 12) {
+      wx.showToast({
+        title: '短评长于12字', //提示的内容,
+        icon: 'none'
+      })
+      return
+    }
+    BookModel.postComment(this.data.book.id, comment).then((res) => {
+      if(res.error_code !== 0) {
+        wx.showToast({
+          title: '评论失败',
+          icon: 'none'
+        })
+        return
+      }
+      
+      wx.showToast({
+        title: '评论成功',
+        icon: 'none'
+      })
+
+      const comments = this.data.comments.slice(0)
+      comments.unshift({
+        content: comment,
+        nums: 1
+      })
+      this.setData({
+        comments: comments
       })
     })
   },
