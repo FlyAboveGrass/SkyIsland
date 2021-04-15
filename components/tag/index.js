@@ -16,12 +16,13 @@ Component({
    */
   data: {
     type: {
+      default: 'default',
       success: 'success',
       info: 'info',
       warning: 'waring',
       danger: 'danger'
     },
-    curType: ''
+    curType: 'default'
   },
 
   lifetimes: {
@@ -31,6 +32,7 @@ Component({
           curType: this.data.type[this.properties.type]
         })
       }
+      console.log('this.data.content', this.data.content)
     }
   },
 

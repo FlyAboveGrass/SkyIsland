@@ -1,4 +1,5 @@
 import BookModel from '../../model/book'
+import searchBook from '../../model/search-book';
 
 Page({
 
@@ -6,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookList: []
+    bookList: [],
+    searching: false,
+    bookPlaceSearch: '搜索数据'
   },
 
   /**
@@ -31,6 +34,29 @@ Page({
       url: '/pages/book-detail/index?bid=' + bid,
     })
   },
+
+  onSearch() {
+    this.setData({
+      searching: true
+    })
+  },
+  cancelSearch() {
+    this.setData({
+      searching: false
+    })
+  },
+  searchBook(e) {
+    this.setData({
+      searching: false,
+      bookPlaceSearch: e.detail.bookName
+    })
+    BookModel.search(0, e.detail.bookName).then(res => {
+      this.setData({
+        bookList: res.books
+      })
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

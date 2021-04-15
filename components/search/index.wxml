@@ -1,0 +1,56 @@
+<view class="search-component">
+  <view class="search-container">
+    <view class="search-box">
+      <image class="search-img" src="/images/icon/search.png"></image>
+      <input
+        class="input-book"
+        type="text"
+        placeholder="搜索书籍"
+        autofocus="true"
+        bind:confirm="onConfirm"
+        model:value ="{{ bookName }}"
+      />
+    </view>
+    <view class="cancel-search" bind:tap="onCancel">
+        取消
+    </view>
+  </view>
+
+  <view class="search-content">
+    <view class="search-history">
+      <view class="search-history-header">
+        历史搜索
+      </view>
+      <view class="search-tag">
+        <v-tag 
+          wx:for="{{ searchHistoryList }}"
+          wx:key="index"
+          class="search-tag-item"
+          type="default"
+          content="{{ item }}"
+          data-search-item="{{ item }}"
+          bind:tap="tapSearchItem"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="search-content">
+    <view class="search-hot">
+      <view class="search-hot-header">
+        热门搜索
+      </view>
+      <view class="search-tag">
+        <v-tag
+          wx:for="{{ searchHotList }}"
+          wx:key="index"
+          class="search-tag-item"
+          type="default"
+          content="{{ item }}"
+          data-search-item="{{ item }}"
+          bind:tap="tapSearchItem"
+        />
+      </view>
+    </view>
+  </view>
+</view>

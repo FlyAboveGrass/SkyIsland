@@ -1,21 +1,27 @@
-<!-- <v-book 
-  wx:if="{{ bookList.length > 0 }}" 
-  author="{{ bookList[0].author }}" 
-  title="{{ bookList[0].title }}"
-  like-count="{{ bookList[0].fav_nums }}"
-  img="{{ bookList[0].image }}"
-></v-book> -->
-
-<view class="book-list-container">
-  <v-book 
-    wx:for="{{ bookList }}"
-    wx:key="id"
-    class="book-item"
-    author="{{ item.author }}" 
-    title="{{ item.title }}"
-    like-count="{{ item.fav_nums }}"
-    img="{{ item.image }}"
-    bind:tap="toBookDetail"
-    data-id="{{ item.id }}"
-  ></v-book>
+<view class="search" wx:if="{{ !searching }}">
+  <view class="search-container">
+    <view class="search-box" bind:tap="onSearch">
+      <image class="search-img" src="/images/icon/search.png"></image>
+      <text class="search-placeholder">{{ bookPlaceSearch }}</text>
+    </view>
+  </view>
+  <view class="book-list-container">
+    <v-book 
+      wx:for="{{ bookList }}"
+      wx:key="id"
+      class="book-item"
+      author="{{ item.author }}" 
+      title="{{ item.title }}"
+      like-count="{{ item.fav_nums }}"
+      img="{{ item.image }}"
+      bind:tap="toBookDetail"
+      data-id="{{ item.id }}"
+    ></v-book>
+  </view>
 </view>
+
+<v-search 
+  wx:elif="{{ searching }}"
+  bind:onCancel="cancelSearch"
+  bind:onSearch="searchBook"
+/>
