@@ -5,14 +5,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    authorized: false,
+    userInfo: null,
+    bookCount: 0,
+    classics: []
   },
+
+  onGetUserInfo(e) {
+    const userInfo = e.detail.userInfo
+    if(userInfo){
+      this.setData({
+        userInfo: userInfo,
+        authorized: true
+      }) 
+    }
+  },
+
+  // userAuthorized() {
+  //   wx.getSetting({ 
+  //     success: res => {
+  //       console.log(res);
+  //       if(res.authSetting['scope.userInfo']) {
+  //         wx.getUserInfo({
+  //           success: (res) => {
+  //             console.log(res);
+  //             // this.setData({
+  //             //   authorized: true,
+  //             //   userInfo: res.userInfo
+  //             // })
+  //           }
+  //         })
+  //       }
+  //     } 
+  //   });
+  // },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.userAuthorized()
   },
 
   /**

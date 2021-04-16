@@ -17,6 +17,11 @@
           "pathName": "pages/book-detail/index",
           "query": "bid=7",
           "scene": null
+        },
+        {
+          "name": "pages/my/index",
+          "pathName": "pages/my/index",
+          "scene": null
         }
       ]
     }

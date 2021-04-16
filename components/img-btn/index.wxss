@@ -1,0 +1,5 @@
+.container {
+    padding: 0;
+    width: auto !important;
+    border: none !important;
+}
