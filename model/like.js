@@ -13,4 +13,4 @@ class LikeModel extends HTTP {
     }
 }
 
-export default LikeModel
+export default new LikeModel()

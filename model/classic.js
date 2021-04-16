@@ -1,6 +1,14 @@
 import HTTP from '../utils/http'
 
 class ClassicModel extends HTTP {
+    getMyFavor(success){
+        const params={
+          url:'classic/favor',
+          success:success
+        }
+        this.request(params)
+    }
+
     getLast(callback) {
         this.request({
             url: 'classic/latest',
@@ -47,4 +55,4 @@ class ClassicModel extends HTTP {
     
 }
 
-export default ClassicModel
+export default new ClassicModel()

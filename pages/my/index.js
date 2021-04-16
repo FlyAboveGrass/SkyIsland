@@ -1,4 +1,6 @@
-// pages/my/index.js
+import BookModel from '../../model/book'
+import ClassicModel from '../../model/classic'
+
 Page({
 
   /**
@@ -18,7 +20,25 @@ Page({
         userInfo: userInfo,
         authorized: true
       }) 
+      this.getMyBookCount()
+      this.getMyFavor()
     }
+  },
+  getMyBookCount() {
+    BookModel.getMyBookCount()
+    .then(res=>{
+      this.setData({
+        bookCount:res.count
+      })
+    })
+  },
+  getMyFavor(){
+    ClassicModel.getMyFavor(res=>{
+      console.log('获取到喜欢的图书')
+      this.setData({
+        classics:res
+      })
+    })
   },
 
   // userAuthorized() {

@@ -1,7 +1,5 @@
-import ClassicModel from '../../model/classic'
-import LikeModel from '../../model/like'
-const classicModel = new ClassicModel();
-const likeModel = new LikeModel();
+import classicModel from '../../model/classic'
+import likeModel from '../../model/like'
 
 Page({
 
